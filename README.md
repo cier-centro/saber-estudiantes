@@ -19,6 +19,4 @@ cd node_modules\electron\dist\resources\app
 git clone https://github.com/cier-centro/saber-estudiantes.git
 ```
 
-Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).
 
-#### License [CC0 (Public Domain)](LICENSE.md)
