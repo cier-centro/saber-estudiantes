@@ -6,7 +6,7 @@ cont_angular.controller('askTestCtrl', ['$scope', '$stateParams', '$ionicPopup',
         $scope.findQuestion = function (id) {
             for (var k in questions_data) {
                 for (var k2 in questions_data[k]["questions"]) {
-                    if (questions_data[k]["questions"][k2].id == id) {
+                    if (questions_data[k]["questions"][k2].id == id || questions_data[k]["questions"][k2].cod_question == id ) {
                         return questions_data[k]["questions"][k2]
                     }
                 }

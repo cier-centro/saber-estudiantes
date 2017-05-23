@@ -89,7 +89,7 @@ cont_angular.controller('feedbackTestCtrl', ['$scope', '$stateParams', '$ionicPo
             selected_questions = [];
             current_question = 0;
             user_answers = {};
-            $state.go('dbasselection')
+            $state.go('start')
         }
         $scope.savePDF = function () {
 
@@ -151,15 +151,21 @@ cont_angular.controller('feedbackTestCtrl', ['$scope', '$stateParams', '$ionicPo
         $scope.Print = function () {
     			const electron= nodeRequire('electron').remote;
     			const fs = nodeRequire('fs');
-    			let win = electron.BrowserWindow.getFocusedWindow();
-    			console.log(win)
-                win.webContents.printToPDF({
-    			  landscape: false
-    			}, function(err, data) {
-    			  var dist = 'C:\\Users\\jeanpierre\\Desktop\\test.pdf'
-    			  fs.writeFile(dist, data, function(err) {
-    				if(err) alert('genearte pdf error', err)
-    			  })
-    			})
+          const dialog = electron.dialog;
+          dialog.showSaveDialog({filters:[{name: 'Resultado prueba tipo saber', extensions: ['pdf']}]}, function (fileNames) {
+            if (fileNames === undefined) return;
+            let win = electron.BrowserWindow.getFocusedWindow();
+      			console.log(win)
+            win.webContents.printToPDF({
+  		           landscape: false
+  		      }, function(err, data) {
+              var dist = fileNames;
+              console.log(dist)
+              fs.writeFile(dist, data, function(err) {
+                if(err) alert('genearte pdf error', err)
+              })
+            })
+          });
+
         };
     }])
