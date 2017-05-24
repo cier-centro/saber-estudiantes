@@ -1,57 +1,8 @@
-cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$http', '$state', '$ionicPopup',
-    function ($scope, $stateParams, $http, $state, $ionicPopup) {
-        $scope.data = {"grade": "0", "id_asignature": "NA", max_questions: "5", option: "manual"};
-
-        $scope.getDbaData = function () {
-            if ($scope.data.option == "manual") {
-        				//console.log($scope.data)
-        				var url = "data/dbas/"+$scope.data.grade+$scope.data.id_asignature+".json";
-        				if(ionic.Platform.isAndroid()){
-            					url = "/android_asset/www/data/dbas/"+$scope.data.grade+$scope.data.id_asignature+".json";
-        				}
-
-        				$http.get(url).success(function(response){
-        					//console.log(response)
-        					$scope.dbas = response;
-        				});
-
-                /*$http.post("dbas/", $scope.data).then(function (r) {
-                    $scope.dbas = r.data;
-                });*/
-            }
-        };
-
-        $scope.$on('$ionicView.enter', function () {
-            selected_dbas = [];
-        });
-
-        $scope.save_questionary = function () {
-            if ($scope.data.option == "manual") {
-                var inputs = document.getElementById('dba_list').elements;
-                for (var i = 0; i < inputs.length; i++) {
-                    if (inputs[i].checked) {
-                        selected_dbas.push(inputs[i].name)
-                    }
-                }
-
-                if (selected_dbas.length == 1) {
-                    var alertPopup = $ionicPopup.alert({
-                        title: 'Seleccione dbas',
-                        template: 'Debe seleccionar dbas para poder continuar.'
-                    });
-                    return null;
-                }
-                max_questions = $scope.data.max_questions;
-                $state.go("selectQuestions");
-            } else
-                $scope.showPopupName();
-        };
-
-        $scope.clearDbaList = function () {
-            $scope.dbas = [];
-        };
-
-        $scope.showPopupName = function () {
+cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$http', '$state', '$ionicPopup','$interval','globals',
+    function ($scope, $stateParams, $http, $state, $ionicPopup, $interval,globals) {
+        $scope.data = {"grade": "0", "id_asignature": "NA", max_questions: "5", option: "manual", name:""};
+        $scope.dbas = [];
+        $scope.showNamePopup =function(){
             var name_popup = $ionicPopup.show({
                 template: '<p>Por favor, antes de iniciar la prueba ingresa tu nombre</p><input type="text" ng-model="data.name">',
                 title: 'Ingresa tu nombre',
@@ -78,21 +29,36 @@ cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$ht
                     }
                 ]
             });
-
             name_popup.then(function (res) {
-                if (res != null) {
-                    user_name = res;
-					var url = "data/dbas/"+$scope.data.grade+$scope.data.id_asignature+".json";
+              if (res!=null && res !=""){
+                globals.total_time = 0;
+                timer = setInterval(function(){
+                    globals.total_time++;
+                    $scope.$apply();
+                    document.getElementById("time_counter").innerHTML = "Tiempo Total: " + Math.floor(globals.total_time/60)+":"+Math.floor(globals.total_time%60);
+                    console.log(globals.total_time);
+                }, 1000);
+                $state.go("askaquestion");
+              }
+            })
+        }
+
+        $scope.randomTest = function () {
+          var url = "data/dbas/"+$scope.data.grade+$scope.data.id_asignature+".json";
 					if(ionic.Platform.isAndroid()){
 						url = "/android_asset/www/data/dbas/"+$scope.data.grade+$scope.data.id_asignature+".json";
 					}
 
 					$http.get(url).success(function(response){
 						var inputs = response;
-                        max_questions = $scope.data.max_questions;
-                        for (var i = 0; i < inputs.length; i++) {
-                            selected_dbas.push(inputs[i].id);
-                        }
+            max_questions = $scope.data.max_questions;
+            user_name = $scope.data.student_name;
+            test_name = $scope.data.test_name;
+            selected_level=  $scope.data.grade;
+            selected_asignare = $scope.data.id_asignature;
+            for (var i = 0; i < inputs.length; i++) {
+                selected_dbas.push(inputs[i].id);
+            }
 						var url = "data/questions.json";
 						if(ionic.Platform.isAndroid()){
 							url = "/android_asset/www/data/questions.json";
@@ -107,39 +73,19 @@ cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$ht
 								}
 							}
 							for (var i in $scope.dbas) {
-                                for (var j in $scope.dbas[i]["questions"]) {
-                                    if (selected_questions.length < max_questions) {
-                                        if (Math.random() > 0.5) {
-                                            selected_questions.push($scope.dbas[i]["questions"][j].id);
-                                        }
-                                    }
-                                }
-                            }
+                  for (var j in $scope.dbas[i]["questions"]) {
+                      if (selected_questions.length < max_questions) {
+                          if (Math.random() > 0.5) {
+                              selected_questions.push($scope.dbas[i]["questions"][j].id);
+                          }
+                      }
+                  }
+              }
 							shuffle(selected_questions);
 							questions_data = $scope.dbas;
-							$state.go("askaquestion");
-						});
-					});
-
-
-
-
-                        /*$http.post("quiz/get-questions", {"dba_list": selected_dbas}).then(function (r) {
-                            questions_data = r.data;
-
-                            for (var i in questions_data) {
-                                for (var j in questions_data[i]["questions"]) {
-                                    if (selected_questions.length < max_questions) {
-                                        if (Math.random() > 0.5) {
-                                            selected_questions.push(questions_data[i]["questions"][j].id);
-                                        }
-                                    }
-                                }
-                            }
-                            $state.go("askaquestion");
-                        });*/
-
-                }
-            });
+              $scope.showNamePopup();
+							//$state.go("askaquestion");
+            })
+          })
         }
     }]);

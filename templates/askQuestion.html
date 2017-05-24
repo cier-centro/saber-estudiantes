@@ -1,6 +1,6 @@
 <ion-view hide-nav-bar="true" id="page6">
     <ion-content padding="true">
-        
+
         <div class="principal-header" >
             <div class="row">
                 <div class="col col-50" align="center">
@@ -11,12 +11,25 @@
                 </div>
             </div>
         </div>
-        
+        <div class="card">
+          <div class="item item-text-wrap">
+            <div class="row">
+              <div class="col-33">Nombre de la Prueba: {{header_data.test}}</div>
+              <div class="col-33">Nombre del estudiante: {{header_data.student}}</div>
+              <div class="col-33">Asignatura: {{header_data.asignature}}</div>
+            </div>
+            <div class="row">
+              <div class="col-33">Curso: {{header_data.level}}</div>
+              <div class="col-33">Pregunta: {{current_question+1}}/{{max_questions}}</div>
+              <div class="col-33" id ="time_counter">{{globals.total_time}}</div>
+            </div>
+          </div>
+        </div>
         <div id="page-markdown1" style="color:#000000;text-align:justify;">
             <h4>{{question.header_question}}
             </h4>
         </div>
-        
+
         <div class="card" id="mathContainer" ng-if="question.type=='2'">
             {{question.file}}
         </div>

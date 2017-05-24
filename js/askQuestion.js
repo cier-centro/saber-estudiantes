@@ -1,5 +1,5 @@
-cont_angular.controller('askTestCtrl', ['$scope', '$stateParams', '$ionicPopup', '$state', '$ionicScrollDelegate',
-    function ($scope, $stateParams, $ionicPopup, $state, $ionicScrollDelegate) {
+cont_angular.controller('askTestCtrl', ['$scope', '$stateParams', '$ionicPopup', '$state', '$ionicScrollDelegate','globals',
+    function ($scope, $stateParams, $ionicPopup, $state, $ionicScrollDelegate,globals) {
         if (selected_questions.length == 0) {
             $state.go("dbasselection");
         }
@@ -29,8 +29,12 @@ cont_angular.controller('askTestCtrl', ['$scope', '$stateParams', '$ionicPopup',
         })
 
         $scope.current_question = current_question;
+        $scope.max_questions=max_questions;
         $scope.data = {"answer": 5};
         $scope.option = "Continuar";
+
+        $scope.header_data ={"test":test_name,"student":user_name,"asignature":selected_asignare,"level":selected_level}
+
 
         $scope.showConfirm = function () {
             for (var id in user_answers) {
@@ -54,6 +58,7 @@ cont_angular.controller('askTestCtrl', ['$scope', '$stateParams', '$ionicPopup',
             });
             confirmPopup.then(function (res) {
                 if (res) {
+                    clearInterval(timer);
                     $state.go("answersFeedback")
                 }
             });

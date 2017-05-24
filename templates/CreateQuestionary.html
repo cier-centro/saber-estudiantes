@@ -17,7 +17,7 @@
             <div class="row">
               <div class="col">
                 <label>
-                    <span class="input-label">Nombre del estudiante</span>
+                    <span ng-model="data.student_name" class="input-label">Nombre del estudiante</span>
                 </label>
                 <label class="item item-input">
                   <input type="text" placeholder="Nombre aquí">
@@ -31,7 +31,7 @@
                         <span class="input-label">Nombre de la prueba</span>
                     </label>
                     <label class="item item-input">
-                      <input type="text" placeholder="Nombre de la prueba">
+                      <input type="text" ng-model="data.test_name" placeholder="Nombre de la prueba">
                     </label>
                 </div>
                 <div class="col col-50">
@@ -100,7 +100,7 @@
         <div id="page-button-bar9" class="pull-right">
             <div class="row">
                 <div class="col">
-                    <a id="page-button12" class="button button-positive" ng-click="save_questionary()">Crear Prueba Aleatoria</a>
+                    <a id="page-button12" class="button button-positive" ng-click="randomTest()">Crear Prueba Aleatoria</a>
                 </div>
             </div>
         </div>

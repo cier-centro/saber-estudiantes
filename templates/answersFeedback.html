@@ -12,23 +12,19 @@
             </div>
         </div>
         <a id="page-button11" class="button button-block button-stable" ng-click="Print()">Guardar PDF</a>
-        <h3>Nombre: {{name}}</h3>
-        <h3>Hoja de Resultados:</h3>
-        <div class="row">
-            <div class="col-20" align="center">
+        <div class="card">
+          <div class="item item-text-wrap">
+            <div class="row">
+              <div class="col-33">Nombre de la Prueba: {{header_data.test}}</div>
+              <div class="col-33">Nombre del estudiante: {{header_data.student}}</div>
+              <div class="col-33">Asignatura: {{header_data.asignature}}</div>
             </div>
-            <div class="col-20" align="center">
-                <h3>A.</h3>
+            <div class="row">
+              <div class="col-33">Curso: {{header_data.level}}</div>
+              <div class="col-33">Tiempo Total: {{formatTime(header_data.total_time)}}</div>
+              <div class="col-33">Tiempo Promedio: {{formatTime(header_data.total_time/header_data.max_questions)}}</div>
             </div>
-            <div class="col-20" align="center">
-                <h3>B.</h3>
-            </div>
-            <div class="col-20" align="center">
-                <h3>C.</h3>
-            </div>
-            <div class="col-20" align="center">
-                <h3>D.</h3>
-            </div>
+          </div>
         </div>
 
         <div class="row" ng-repeat="question in questions track by $index">

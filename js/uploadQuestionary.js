@@ -1,5 +1,5 @@
-cont_angular.controller('uploadQuestionaryCtrl', ['$scope', '$stateParams', '$ionicPopup', '$state', '$ionicScrollDelegate','$http',
-    function ($scope, $stateParams, $ionicPopup, $state, $ionicScrollDelegate,$http) {
+cont_angular.controller('uploadQuestionaryCtrl', ['$scope', '$stateParams', '$ionicPopup', '$state', '$ionicScrollDelegate','$http','globals',
+    function ($scope, $stateParams, $ionicPopup, $state, $ionicScrollDelegate,$http,globals) {
         $scope.data = {"path":"C:\\Users\\Programador\\Desktop\\primera.prueba"};
         $scope.findfile = function(){
           const electron= nodeRequire('electron').remote;
@@ -21,7 +21,16 @@ cont_angular.controller('uploadQuestionaryCtrl', ['$scope', '$stateParams', '$io
             lines = data.split('\n');
             var nombreprueba = lines[0];
             selected_questions = lines[1].split(',')
+            max_questions = selected_questions.length;
+            var sample = selected_questions[0].split('#')[0];
+            selected_level = parseInt(sample)
+            selected_asignare = sample.replace(""+selected_level,"")[0]
             $scope.getQuesitonsData()
+            timer = setInterval(function(){
+                globals.total_time++;
+                document.getElementById("time_counter").innerHTML = "Tiempo Total: " + Math.floor(globals.total_time/60)+":"+(globals.total_time%60);
+                console.log(globals.total_time);
+            }, 1000);
             $state.go("askaquestion")
             // data is the contents of the text file we just read
           });

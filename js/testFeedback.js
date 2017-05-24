@@ -1,8 +1,11 @@
-cont_angular.controller('feedbackTestCtrl', ['$scope', '$stateParams', '$ionicPopup', '$state', '$ionicModal', '$ionicScrollDelegate',
-    function ($scope, $stateParams, $ionicPopup, $state, $ionicModal, $ionicScrollDelegate) {
+cont_angular.controller('feedbackTestCtrl', ['$scope', '$stateParams', '$ionicPopup', '$state', '$ionicModal', '$ionicScrollDelegate','globals',
+    function ($scope, $stateParams, $ionicPopup, $state, $ionicModal, $ionicScrollDelegate,globals) {
         if (selected_questions.length == 0) {
             $state.go("dbasselection");
         }
+
+
+        $scope.header_data ={"test":test_name,"student":user_name,"asignature":selected_asignare,"level":selected_level,"total_time":globals.total_time,"max_questions":max_questions}
 
 
         $scope.$on('$ionicView.enter', function () {
@@ -18,6 +21,10 @@ cont_angular.controller('feedbackTestCtrl', ['$scope', '$stateParams', '$ionicPo
             document.getElementById("btn_canvas_"+group).style.display="none"
             loadFirstPagePDF("contents/"+file,"pdf_viewer_"+group);
             $ionicScrollDelegate.resize();
+        }
+
+        $scope.formatTime = function (value) {
+            return Math.floor(value/60)+":"+(value%60);
         }
 
         $scope.showQuestion = function (q) {
@@ -89,6 +96,9 @@ cont_angular.controller('feedbackTestCtrl', ['$scope', '$stateParams', '$ionicPo
             selected_questions = [];
             current_question = 0;
             user_answers = {};
+            test_name = ""
+            selected_level= 0;
+            selected_asignare = "Y";
             $state.go('start')
         }
         $scope.savePDF = function () {
