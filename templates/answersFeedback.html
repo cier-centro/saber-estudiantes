@@ -27,12 +27,12 @@
           </div>
         </div>
 
-        <div class="row" ng-repeat="question in questions track by $index">
-          <div class="card" id="answers">
+        <div class="row answers" ng-repeat="question in questions track by $index">
+          <div class="card">
             <div class="item item-divider">
-              Pregunta número {{$index+1}} ({{question.question.cod_question}})
+              <p class="question-numb">Pregunta número {{$index+1}}</p> <p>({{question.question.cod_question}})</p>
             </div>
-            <p>{{question.question.header_question}}</p>
+            <p class="question">{{question.question.header_question}}</p>
             <div class="item item-text-wrap">
               <div id="mathContainer" ng-if="question.question.type=='2'">
                   {{question.question.file}}

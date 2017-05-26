@@ -9545,6 +9545,20 @@ ion-content.scroll-content.ionic-scroll {
 .card, .item-text-wrap {
   box-shadow: 0 0px 0px !important; }
 
+.answers {
+  width: 90%;
+  margin: 2% auto; }
+  .answers .item-divider {
+    background-color: #eb6a40; }
+    .answers .item-divider p {
+      display: inline-block;
+      color: white; }
+    .answers .item-divider .question-numb {
+      font-weight: bold; }
+  .answers .card, .answers .item-text-wrap {
+    width: 100%;
+    background-color: white !important; }
+
 .start-buttons {
   vertical-align: middle;
   text-align: center; }
