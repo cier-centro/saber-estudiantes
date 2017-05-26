@@ -12,7 +12,7 @@
             </div>
         </div>
         <a id="page-button11" class="button button-block button-stable" ng-click="Print()">Guardar PDF</a>
-        <div class="card">
+        <div class="card" id="personal-information">
           <div class="item item-text-wrap">
             <div class="row">
               <div class="col-33">Nombre de la Prueba: {{header_data.test}}</div>
@@ -28,7 +28,7 @@
         </div>
 
         <div class="row" ng-repeat="question in questions track by $index">
-          <div class="card">
+          <div class="card" id="answers">
             <div class="item item-divider">
               Pregunta número {{$index+1}} ({{question.question.cod_question}})
             </div>

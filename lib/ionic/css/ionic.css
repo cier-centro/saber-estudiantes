@@ -9515,7 +9515,8 @@ ion-content.scroll-content.ionic-scroll {
   background-color: #50bbb5; }
 
 .start-explanation {
-  padding: 0px 5%; }
+  padding: 0px 5%;
+  display: inline-block; }
   .start-explanation p {
     color: white;
     font-size: 110%;
@@ -9525,8 +9526,15 @@ ion-content.scroll-content.ionic-scroll {
     font-size: 300%;
     font-weight: bold; }
 
+.start-image {
+  display: inline-block;
+  padding: 0px 5%; }
+
 .card, .item-text-wrap {
   background: rgba(80, 187, 181, 0); }
+
+.image-panel {
+  width: 100%; }
 
 .start-explanation {
   margin-top: 50px;
