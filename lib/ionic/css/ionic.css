@@ -9512,7 +9512,7 @@ a.button {
 
 */
 ion-content.scroll-content.ionic-scroll {
-  background-color: #50bbb5; }
+  background-color: #eb6a40; }
 
 .start-explanation {
   padding: 0px 5%;
@@ -9531,7 +9531,7 @@ ion-content.scroll-content.ionic-scroll {
   padding: 0px 5%; }
 
 .card, .item-text-wrap {
-  background: rgba(80, 187, 181, 0); }
+  background: rgba(235, 106, 64, 0); }
 
 .image-panel {
   width: 100%; }
@@ -9549,7 +9549,7 @@ ion-content.scroll-content.ionic-scroll {
   width: 90%;
   margin: 2% auto; }
   .answers .item-divider {
-    background-color: #eb6a40; }
+    background-color: #50bbb5; }
     .answers .item-divider p {
       display: inline-block;
       color: white; }
@@ -9558,6 +9558,11 @@ ion-content.scroll-content.ionic-scroll {
   .answers .card, .answers .item-text-wrap {
     width: 100%;
     background-color: white !important; }
+
+div #personal-information {
+  display: block;
+  top: 0;
+  position: absolute; }
 
 .start-buttons {
   vertical-align: middle;
