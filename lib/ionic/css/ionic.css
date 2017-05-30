@@ -9625,4 +9625,11 @@ div #personal-information {
     .principal-header .logo-container .col {
       margin: 0 !important; } }
 
+form .item-select {
+  height: 47px; }
+  form .item-select select {
+    width: 100%;
+    max-width: 100%;
+    direction: ltr; }
+
 /*# sourceMappingURL=ionic.css.map */
