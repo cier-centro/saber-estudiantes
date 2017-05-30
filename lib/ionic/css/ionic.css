@@ -9512,7 +9512,7 @@ a.button {
 
 */
 ion-content.scroll-content.ionic-scroll {
-  background-color: #eb6a40; }
+  background-color: #eb8368; }
 
 .start-explanation {
   padding: 0px 5%;
@@ -9531,7 +9531,7 @@ ion-content.scroll-content.ionic-scroll {
   padding: 0px 5%; }
 
 .card, .item-text-wrap {
-  background: rgba(235, 106, 64, 0); }
+  background: rgba(235, 131, 104, 0); }
 
 .image-panel {
   width: 100%; }
@@ -9631,5 +9631,13 @@ form .item-select {
     width: 100%;
     max-width: 100%;
     direction: ltr; }
+
+.student-name h2 {
+  color: white;
+  margin: 0px 10%; }
+
+.studen-name-container {
+  background-color: #eb5a47;
+  margin: 10px auto; }
 
 /*# sourceMappingURL=ionic.css.map */
