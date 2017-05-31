@@ -1,31 +1,24 @@
-<ion-view hide-nav-bar="true" id="page6">
+<ion-view hide-nav-bar="false" id="page6">
+  <div class="bar bar-light" id="header-data-test" style="height:initial">
+  <div class="card" id="test-data">
+    <div class="item item-text-wrap">
+      <div class="row" id="fixed-data">
+        <div class="col-20"><h2>Nombre de la Prueba: </h2><p>{{header_data.test}}</p></div>
+        <div class="col-20"><h2>Nombre del estudiante:</h2> <p>{{header_data.student}}</p></div>
+        <div class="col-20"><h2>Asignatura:</h2><p> {{header_data.asignature}}</p></div>
+        <div class="col-20"><h2>Curso:</h2> <p>{{header_data.level}}</p></div>
+      </div>
+      <div class="row">
+        <div class="col-33">Pregunta: {{current_question+1}}/{{max_questions}}</div>
+        <div class="col-33" id ="time_counter">{{globals.total_time}}</div>
+      </div>
+    </div>
+  </div>
+</div>
     <ion-content padding="true">
 
-        <div class="principal-header" >
-            <div class="row">
-                <div class="col col-50" align="center">
-                    <img src="img/pruebas_saber.jpg" width=178 height=100  alt="Pruebas Saber">
-                </div>
-                <div class="col col-50">
-                    <h1>Pruebas Saber</h1>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-          <div class="item item-text-wrap">
-            <div class="row">
-              <div class="col-33">Nombre de la Prueba: {{header_data.test}}</div>
-              <div class="col-33">Nombre del estudiante: {{header_data.student}}</div>
-              <div class="col-33">Asignatura: {{header_data.asignature}}</div>
-            </div>
-            <div class="row">
-              <div class="col-33">Curso: {{header_data.level}}</div>
-              <div class="col-33">Pregunta: {{current_question+1}}/{{max_questions}}</div>
-              <div class="col-33" id ="time_counter">{{globals.total_time}}</div>
-            </div>
-          </div>
-        </div>
-        <div id="page-markdown1" style="color:#000000;text-align:justify;">
+
+        <div id="page-markdown1" class="col col-80"style="color:#000000;text-align:justify;">
             <h4>{{question.header_question}}
             </h4>
         </div>

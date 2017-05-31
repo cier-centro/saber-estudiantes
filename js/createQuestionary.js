@@ -3,34 +3,7 @@ cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$ht
         $scope.data = {"grade": "0", "id_asignature": "NA", max_questions: "5", option: "manual", name:""};
         $scope.dbas = [];
         $scope.showNamePopup =function(){
-            var name_popup = $ionicPopup.show({
-                template: '<p>Por favor, antes de iniciar la prueba ingresa tu nombre</p><input type="text" ng-model="data.name">',
-                title: 'Ingresa tu nombre',
-                subTitle: '',
-                scope: $scope,
-                buttons: [
-                    {
-                        text: 'Cancelar',
-                        onTap: function (e) {
-                            name_popup.close();
-                            return null;
-                        }
-                    },
-                    {
-                        text: '<b>Continuar</b>',
-                        type: 'button-positive',
-                        onTap: function (e) {
-                            if (!$scope.data.name) {
-                                e.preventDefault();
-                            } else {
-                                return $scope.data.name;
-                            }
-                        }
-                    }
-                ]
-            });
-            name_popup.then(function (res) {
-              if (res!=null && res !=""){
+
                 globals.total_time = 0;
                 timer = setInterval(function(){
                     globals.total_time++;
@@ -38,9 +11,9 @@ cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$ht
                     document.getElementById("time_counter").innerHTML = "Tiempo Total: " + Math.floor(globals.total_time/60)+":"+Math.floor(globals.total_time%60);
                     console.log(globals.total_time);
                 }, 1000);
+                user_name=$scope.data.name;
                 $state.go("askaquestion");
-              }
-            })
+
         }
 
         $scope.randomTest = function () {
