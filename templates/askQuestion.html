@@ -6,7 +6,7 @@
         <div class="col-20"><h2>Nombre de la Prueba: </h2><p>{{header_data.test}}</p></div>
         <div class="col-20"><h2>Nombre del estudiante:</h2> <p>{{header_data.student}}</p></div>
         <div class="col-20"><h2>Asignatura:</h2><p> {{header_data.asignature}}</p></div>
-        <div class="col-20"><h2>Curso:</h2> <p>{{header_data.level}}</p></div>
+        <div class="col-20" ><h2>Curso:</h2> <p id="course">{{header_data.level}}</p></div>
       </div>
       <div class="row time-header">
         <div class="col-33"><h2>Pregunta:</h2> <p>{{current_question+1}}/{{max_questions}}</p></div>
@@ -15,28 +15,23 @@
     </div>
   </div>
 </div>
-    <ion-content padding="true">
+    <ion-content padding="true" id="has-second-header">
       <div class="questions-container">
         <div class="card" id="empty-space">
-            <div class="row responsive-md" id="fixed-data">
-              <div class="col-50"><h2>Nombre de la Prueba: </h2><p>-</p></div>
-              <div class="col-20"><h2>Nombre del estudiante:</h2> <p>-</p></div>
+            <div class="row responsive-md">
+              <div class="col-20"><h2>Nombre de la Prueba: </h2><p>-</p></div>
+              <div class="col-20" id="name-label"><h2>Nombre del estudiante:</h2> <p>-</p></div>
               <div class="col-20"><h2>Asignatura:</h2><p>-</p></div>
-              <div class="col-20"><h2>Curso:</h2> <p>-</p></div>
+              <div class="col-20 time-lab"><h2>Curso:</h2> <p>-</p></div>
             </div>
-            <div class="row time-header">
+            <div class="row time-lab">
               <div class="col-33"><h1>Pregunta:</h1> <p>-</p></div>
               <div class="col-33" id ="time_counter"><h1>Pregunta:</h1> <p>-</p></div>
             </div>
-            <div class="row time-header">
+            <div class="row time-lab">
               <div class="col-33"><h1>Pregunta:</h1> <p>-</p></div>
               <div class="col-33" id ="time_counter"><h1>Pregunta:</h1> <p>-</p></div>
             </div>
-            <div class="row time-header">
-              <div class="col-33"><h1>Pregunta:</h1> <p>-</p></div>
-              <div class="col-33" id ="time_counter"><h1>Pregunta:</h1> <p>-</p></div>
-            </div>
-
 
         </div>
 
