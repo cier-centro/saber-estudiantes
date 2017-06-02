@@ -1,16 +1,17 @@
 <ion-view hide-nav-bar="false" id="page6">
   <div class="bar bar-light" id="header-data-test" style="height:initial">
   <div class="card" id="test-data">
+<!-- -->
     <div class="item item-text-wrap">
-      <div class="row responsive-md" id="fixed-data">
+      <div class="row  responsive-md" id="fixed-data">
         <div class="col-20"><h2>Nombre de la Prueba: </h2><p>{{header_data.test}}</p></div>
         <div class="col-20"><h2>Nombre del estudiante:</h2> <p>{{header_data.student}}</p></div>
         <div class="col-20"><h2>Asignatura:</h2><p> {{header_data.asignature}}</p></div>
         <div class="col-20" ><h2>Curso:</h2> <p id="course">{{header_data.level}}</p></div>
       </div>
-      <div class="row time-header">
-        <div class="col-33"><h2>Pregunta:</h2> <p>{{current_question+1}}/{{max_questions}}</p></div>
-        <div class="col-33" id ="time_counter"><p>{{globals.total_time}} </p></div>
+      <div class="row time-header responsive-md">
+        <div class="col-33" id="question_counter"><h2>Pregunta: {{current_question+1}}/{{max_questions}}</h2></div>
+        <div class="col-33" id ="time_counter"><h2>{{globals.total_time}} </h2></div>
       </div>
     </div>
   </div>
@@ -26,18 +27,18 @@
             </div>
             <div class="row time-lab">
               <div class="col-33"><h1>Pregunta:</h1> <p>-</p></div>
-              <div class="col-33" id ="time_counter"><h1>Pregunta:</h1> <p>-</p></div>
+              <div class="col-33" ><h1>Pregunta:</h1> <p>-</p></div>
             </div>
             <div class="row time-lab">
               <div class="col-33"><h1>Pregunta:</h1> <p>-</p></div>
-              <div class="col-33" id ="time_counter"><h1>Pregunta:</h1> <p>-</p></div>
+              <div class="col-33" ><h1>Pregunta:</h1> <p>-</p></div>
             </div>
 
         </div>
 
 
 
-        <div id="page-markdown1" style="color:#000000;text-align:justify;">
+        <div id="page-markdown1">
             <h4>{{question.header_question}}
             </h4>
         </div>
