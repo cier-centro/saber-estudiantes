@@ -1,0 +1,44 @@
+.questions-container{
+  width: 90%;
+  margin: 0 auto;
+}
+#page-markdown1{
+
+  h4,h3,p{
+    width: 100%;
+    color:white;
+  }
+}
+#answer_list{
+  .generic-text{
+    color: white;
+    text-transform: uppercase;
+    margin: 0px -1px -1px 0px;
+    padding: 10px;
+    background-color: $items-hightlighted;
+    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
+  }
+}
+#mathContainer{
+  .MathJax_SVG_Display{
+    span{
+      background: white;
+      padding: 30px;
+      box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
+    }
+  }
+  .generic-text-image{
+    background-color: $items-hightlighted;
+    width: 100%;
+    color: white;
+    padding: 5px;
+    margin-bottom: 0px;
+  }
+  img{
+    margin-top: 0px;
+    padding: 5px;
+    padding-top: 10px;
+    background-color: white;
+    box-shadow: inset 0px 70px 15px -70px rgba(0,0,0,0.4);
+  }
+}

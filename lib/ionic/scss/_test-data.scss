@@ -1,0 +1,141 @@
+
+#header-data-test{
+  background-color: transparent;
+  border: none;
+  padding-top: 0px;
+}
+#test-data{
+  margin-top: 100px;
+  margin-left: -5px;
+  margin-right: -5px;
+  margin-bottom: -6px;
+  padding: 0px;
+  width: 105%;
+  background-color: transparent;
+  //border: 2px solid rgba(0,0,0,.6);
+  #fixed-data{
+    width: 115%;
+    background-color: $background-test-data;
+    margin-left: -20px;
+    box-shadow: 10px 10px 5px rgba(0,0,0,.4);
+    .col-20{
+      margin: 20px;
+      h2{
+        color: $text-dark-blue !important;
+        font-weight: 600 !important;
+      }
+      p{
+        padding: 5px;
+        background-color: $items-hightlighted;
+        color: white;
+      }
+      @media (max-width: 767px) {
+        & {
+          margin:5px !important;
+        }
+      }
+      //course label in the second header
+      #course{
+        width: 70%;
+        @media(max-width: 767px){
+          &{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    & {
+      margin-top: 0 !important;
+    }
+  }
+  .item.item-text-wrap{
+    @media (max-width: 767px) {
+      & {
+        height: 300px !important;
+        margin: 0 !important;
+      }
+    }
+  }
+  #name-label{
+    @media (max-width: 767px) {
+      & {
+        display: none !important;
+      }
+    }
+  }
+}
+
+#fixed-data{
+  width: 105%;
+}
+
+.time-header {
+  height: 40;
+  width: 100%;
+  margin-top: 30px !important;
+  background-color: transparent;
+  @media (max-width: 767px) {
+    & {
+      margin-top: 10px !important;
+    }
+  }
+}
+
+
+#time-count{
+  background: url('../../../img/bg-timer.png') no-repeat;
+  overflow: hidden;
+  padding: 10px;
+  min-height: 40px;
+  #time_counter{
+    margin-left: 35px;
+    font-weight: 600;
+    color: $text-dark-blue;
+  }
+}
+
+#question_counter{
+  background: url('../../../img/bg-question.png') no-repeat ;
+  overflow: hidden;
+  padding: 10px;
+  min-height: 40px;
+  h2{
+    font-weight: 600;
+    color: $text-dark-blue;
+    margin-left: 35px;
+  }
+}
+
+  .card{
+    box-shadow: 0 0px 0px !important;
+    .item.item-text-wrap{
+      box-shadow: 0 0px 0px !important;
+    }
+  }
+
+
+///this is a empty space needed to set the questions in a right possition
+//that is not properly part of the header test-data, but is an element created because of it
+#empty-space{
+  box-shadow: 0 0px 0px !important;
+  h1,h2,p{
+    color: transparent;
+  }
+  }
+  .time-lab{
+    @media (max-width: 767px) {
+      & {
+        display: none;
+      }
+    }
+  }
+  #name-label{
+    @media (max-width: 767px) {
+      & {
+        display: none;
+      }
+    }
+  }
