@@ -5,14 +5,14 @@
   a{
     width: 90%;
     vertical-align: middle;
-    margin-top: 10%;
+    margin-top: 15%;
 
   }
 }
 
 .button.button-positive {
     border-bottom: 2px solid white;
-    background-color: $white-button-background;
+    background-color: $items-hightlighted-red;
     color: #fff;
 }
 
@@ -84,9 +84,10 @@
 }
 #load {
   width: 100%;
+  box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
 }
 
 .button.button-positive.button-small{
   margin: auto 10px;
-  background-color: $background-general !important;
+  background-color: $items-hightlighted-red !important;
 }

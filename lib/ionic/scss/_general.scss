@@ -27,11 +27,11 @@ ion-content {
 
     &:hover {
       color: white;
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: darken($items-hightlighted-red, 10%);
     }
   }
 
-  
+
 
   .input-text-styles {
     font-weight: 600;

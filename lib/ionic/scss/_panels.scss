@@ -3,7 +3,7 @@
 */
 ion-content.scroll-content.ionic-scroll{
   background-color: $background-general;
-  box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
+  //box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
 }
 .start-explanation{
   padding: 0px 5%;
@@ -80,17 +80,18 @@ div#page-markdown1 {
     }
   }
 
-  
+
   .card{
     width: 100%;
     background-color: white !important;
-    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
+    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3) !important;
 
     .item.item-text-wrap{
       padding: 10px;
+      border: none;
     }
     img{
-      box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
+      box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3) !important;
     }
   }
 
@@ -100,9 +101,16 @@ div#page-markdown1 {
   }
 
   .answers-checked{
+    display: -webkit-box;
     margin-top: 10px;
     padding: 15px;
     border: 2px solid rgba(0,0,0,.6);
+    .icon{
+      width: 3%;
+    }
+    .MathJax_SVG_Display{
+      width: 95%;
+    }
   }
   .question{
     padding: 10px;
