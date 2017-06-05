@@ -5,13 +5,15 @@
     <div class="item item-text-wrap">
       <div class="row  responsive-md" id="fixed-data">
         <div class="col-20"><h2>Nombre de la Prueba: </h2><p>{{header_data.test}}</p></div>
-        <div class="col-20"><h2>Nombre del estudiante:</h2> <p>{{header_data.student}}</p></div>
+        <div class="col-20" id="name-label"><h2>Nombre del estudiante:</h2> <p>{{header_data.student}}</p></div>
         <div class="col-20"><h2>Asignatura:</h2><p> {{header_data.asignature}}</p></div>
         <div class="col-20" ><h2>Curso:</h2> <p id="course">{{header_data.level}}</p></div>
       </div>
       <div class="row time-header responsive-md">
-        <div class="col-33" id="question_counter"><h2>Pregunta: {{current_question+1}}/{{max_questions}}</h2></div>
-        <div class="col-33" id ="time_counter"><h2>{{globals.total_time}} </h2></div>
+        <div class="col-33 time-lab"><h2> </h2></div>
+        <div class="col-10 time-lab"><h2> </h2></div>
+        <div class="col-25" id="question_counter"><h2>Pregunta: {{current_question+1}}/{{max_questions}}</h2></div>
+        <div class="col-25" id="time-count"><div class="time-tex-div" id ="time_counter"> {{globals.total_time}} </div></h2></div>
       </div>
     </div>
   </div>
@@ -21,11 +23,11 @@
         <div class="card" id="empty-space">
             <div class="row responsive-md">
               <div class="col-20"><h2>Nombre de la Prueba: </h2><p>-</p></div>
-              <div class="col-20" id="name-label"><h2>Nombre del estudiante:</h2> <p>-</p></div>
+              <div class="col-20" ><h2>Nombre del estudiante:</h2> <p>-</p></div>
               <div class="col-20"><h2>Asignatura:</h2><p>-</p></div>
               <div class="col-20 time-lab"><h2>Curso:</h2> <p>-</p></div>
             </div>
-            <div class="row time-lab">
+            <div class="row  time-lab">
               <div class="col-33"><h1>Pregunta:</h1> <p>-</p></div>
               <div class="col-33" ><h1>Pregunta:</h1> <p>-</p></div>
             </div>
@@ -61,6 +63,7 @@
         </div>
 
         <form id="answer_list" class="list">
+          <h4 class="generic-text">posibles respuestas</h4>
             <ion-list>
             <ion-radio ng-model="data.answer" ng-value="{{$index}}" ng-repeat="answer in question.answers track by $index" value="{{$index}}" name="respuesta">{{answer.header_answer}}</ion-radio>
 
@@ -68,13 +71,8 @@
 
         </form>
 
-        <div id="page-markdown1" style="color:#000000;text-align:justify;">
-            <!--<p>{{data.answer}} Seleccionada.
-            </p>-->
-        </div>
-
         <div id="page-button-bar9" class="button-bar">
-            <div class="row">
+            <div class="row responsive-md">
                 <div class="col-33">
                     <a id="page-button11" class="button button-assertive  button-block" ng-click="saveAndReturn()" ng-if="current_question!=0">Atrás</a>
                 </div>
