@@ -2,20 +2,13 @@
 
     <ion-content padding="true">
 
-        <div class="principal-header">
-            <div class="row">
-                <div class="col col-50" align="center">
-                    <img src="img/pruebas_saber.jpg" width=178 height=100  alt="Pruebas Saber">
-                </div>
-                <div class="col col-50">
-                    <h1>Pruebas Saber</h1>
-                </div>
-            </div>
+        <div class="principal-header upload-questionary">
+          <div class="row responsive-md">
+          <div class="upload-questionary-elements col col-60 ">
             <div class="card">
               <div class="item item-text-wrap">
                 <h1>Instrucciones para cargar una prueba:</h1>
-                {{data.path}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a finibus mi, elementum interdum leo. Maecenas eget ullamcorper tellus, vel hendrerit eros. Suspendisse potenti. Pellentesque vestibulum lorem sed sollicitudin vulputate. Donec consectetur dui ac turpis placerat, a faucibus velit finibus. Quisque gravida, lacus eget egestas imperdiet, magna erat suscipit augue, ut gravida nunc dolor id dolor. Mauris ut turpis laoreet, ultrices enim in, aliquam est. Fusce pretium odio vitae neque porttitor malesuada. Fusce egestas est mauris. {{path}}
-                <hr/>
+                <p>{{data.path}} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a finibus mi, elementum interdum leo. Maecenas eget ullamcorper tellus, vel hendrerit eros. Suspendisse potenti. Pellentesque vestibulum lorem sed sollicitudin vulputate. Donec consectetur dui ac turpis placerat, a faucibus velit finibus. Quisque gravida, lacus eget egestas imperdiet, magna erat suscipit augue, ut gravida nunc dolor id dolor. Mauris ut turpis laoreet, ultrices enim in, aliquam est. Fusce pretium odio vitae neque porttitor malesuada. Fusce egestas est mauris. {{path}} </p>
                   <div class="list list-inset">
                     <div class="item item-input">
                       <i class="icon ion-search placeholder-icon"></i>
@@ -27,11 +20,15 @@
                   </div>
               </div>
             </div>
-            <div class="button-bar">
-              <a class="button icon-left ion-close-circled button-assertive" ng-click="cancel()" >Cancelar</a>
-              <a class="button icon-left ion-upload button-calm" ng-click="loadFile()">Cargar Prueba</a>
+            <div class="button-bar responsive-md">
+              <a class="button icon-left ion-close-circled button-positive" ng-click="cancel()" >Cancelar</a>
+              <a class="button icon-left ion-upload button-positive" ng-click="loadFile()">Cargar Prueba</a>
             </div>
-
+            </div>
+            <div class="col-40">
+              <img src="" alt="">
+            </div>
+          </div>
         </div>
     </ion-content>
 </ion-view>

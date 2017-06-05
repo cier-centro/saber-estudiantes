@@ -15,7 +15,9 @@ cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$ht
                 $state.go("askaquestion");
 
         }
-
+        $scope.returnToMain = function(){
+          $state.go("start")
+        }
         $scope.randomTest = function () {
           var url = "data/dbas/"+$scope.data.grade+$scope.data.id_asignature+".json";
 					if(ionic.Platform.isAndroid()){
