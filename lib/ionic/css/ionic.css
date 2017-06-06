@@ -9726,10 +9726,6 @@ div #personal-information {
   min-height: 36px;
   margin: auto 10px; }
 
-.cancel-button span {
-  background: url("../../../img/spritesheet.png") no-repeat;
-  background-position: -260px -20px !important; }
-
 .charge-test-button span {
   background: url("../../../img/spritesheet.png") no-repeat;
   background-position: -112px -235px !important; }
@@ -10001,6 +9997,8 @@ ion-content {
     ion-content .button:hover {
       color: white;
       background-color: #e63119; }
+  ion-content .student-logo {
+    background: url("../../../img/logo_header_student.png") no-repeat center/contain; }
   ion-content .input-text-styles, ion-content .item-select select, ion-content .item-input input {
     font-weight: 600;
     text-transform: uppercase;
