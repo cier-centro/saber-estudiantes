@@ -9717,8 +9717,13 @@ div #personal-information {
   min-height: 36px;
   margin: auto 10px; }
 
-#cancel-button {
-  background: url("../../../img/spritesheet.png") no-repeat; }
+.cancel-button span {
+  background: url("../../../img/spritesheet.png") no-repeat;
+  background-position: -260px -20px !important; }
+
+.charge-test-button span {
+  background: url("../../../img/spritesheet.png") no-repeat;
+  background-position: -112px -235px !important; }
 
 /**
  * Header Styles
