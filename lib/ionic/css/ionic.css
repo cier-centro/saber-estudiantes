@@ -9664,6 +9664,8 @@ div #personal-information {
     background-position: -270px -22px; }
   .button.button-positive.random-button span {
     background-position: -188px -24px; }
+  .button.button-positive.finish-button span {
+    background-position: -23px -294px; }
 
 .button.button-calm {
   border-bottom: 2px solid white;
