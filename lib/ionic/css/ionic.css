@@ -9717,8 +9717,8 @@ div #personal-information {
   box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4); }
 
 #find-file {
-  background: url("../../../img/spritesheet.png") no-repeat;
-  background-position: -366px -295;
+  background: url("../../../img/img_spritesheet.png") no-repeat;
+  background-position: -364px -302px;
   background-color: transparent !important;
   overflow: hidden;
   min-width: 35px !important;
@@ -9727,7 +9727,7 @@ div #personal-information {
   margin: auto 10px; }
 
 .charge-test-button span {
-  background: url("../../../img/spritesheet.png") no-repeat;
+  background: url("../../../img/img_spritesheet.png") no-repeat;
   background-position: -112px -235px !important; }
 
 /**
@@ -9752,7 +9752,7 @@ div #personal-information {
   .principal-header .logo-container {
     align-items: center; }
     .principal-header .logo-container div:first-child {
-      background: url("../../../img/logo_header_girl.gif") no-repeat center/contain; }
+      background: url("../../../img/logo_header_student.png") no-repeat center/contain; }
     .principal-header .logo-container div:nth-child(2) {
       background: url("../../../img/logo_header_owl.gif") no-repeat center/contain;
       margin: 0 10px 0 15px; }
