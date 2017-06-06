@@ -5,8 +5,23 @@
   a{
     width: 90%;
     vertical-align: middle;
-    margin-top: 15%;
+    &:first-child {
+      span {
+        background-position: -273px -234px;
+      }
+    }
+    &:last-child {
+      margin-top: 50px;
 
+      span {
+        background-position: -112px -235px;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    & {
+      padding-right: 8%;
+    }
   }
 }
 
@@ -14,6 +29,13 @@
     border-bottom: 2px solid white;
     background-color: $items-hightlighted-red;
     color: #fff;
+    span {
+      background: url('../../../img/img_spritesheet.png') no-repeat;
+      position: absolute;
+      height: 100%;
+      width: 50px;
+      left: 0;
+    }
 }
 
 .button.button-calm{
