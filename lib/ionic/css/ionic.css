@@ -9660,6 +9660,10 @@ div #personal-information {
     height: 100%;
     width: 50px;
     left: 0; }
+  .button.button-positive.cancel-button span {
+    background-position: -270px -22px; }
+  .button.button-positive.random-button span {
+    background-position: -188px -24px; }
 
 .button.button-calm {
   border-bottom: 2px solid white;
