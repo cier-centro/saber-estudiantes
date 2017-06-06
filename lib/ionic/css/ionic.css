@@ -9528,7 +9528,10 @@ ion-content.scroll-content.ionic-scroll {
 
 .start-image {
   display: inline-block;
-  padding: 0px 5%; }
+  padding: 0px 5%;
+  text-align: center; }
+  .start-image img {
+    max-width: 250px; }
 
 .card, .item-text-wrap {
   background: rgba(235, 131, 104, 0); }
@@ -9632,7 +9635,9 @@ div #personal-information {
     @media (max-width: 767px) {
       .principal-header.upload-questionary .button-bar a {
         width: 100%;
-        margin: 0px; } }
+        margin: 0px; }
+      .principal-header.upload-questionary .button-bar a:nth-child(2) {
+        margin-top: 20px; } }
 
 .start-buttons {
   vertical-align: middle;
@@ -9663,7 +9668,15 @@ div #personal-information {
   .button.button-positive.cancel-button span {
     background-position: -270px -22px; }
   .button.button-positive.random-button span {
-    background-position: -188px -24px; }
+    background-position: -431px -224px; }
+  .button.button-positive.finish-button span {
+    background-position: -23px -294px; }
+  .button.button-positive.save-button span {
+    background-position: -190px -235px; }
+  .button.button-positive.back-button span {
+    background-position: -431px -65px; }
+  .button.button-positive.continue-button span {
+    background-position: -431px -19px; }
 
 .button.button-calm {
   border-bottom: 2px solid white;
@@ -9681,6 +9694,9 @@ div #personal-information {
     background: white;
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
     color: black; }
+  .item-radio input:checked + .radio-content .radio-icon {
+    background: none;
+    color: white; }
   .item-radio input:checked + .radio-content .item-content {
     background: #50bbb5;
     border: none;
@@ -9689,6 +9705,8 @@ div #personal-information {
     -ms-transition: all 500ms linear;
     -o-transition: all 500ms linear;
     transition: all 500ms linear; }
+    .item-radio input:checked + .radio-content .item-content span {
+      color: white; }
   .item-radio .radio-content .item-content {
     padding: 5px 5px 5px 70px;
     display: flex;
@@ -9711,9 +9729,19 @@ div #personal-information {
   width: 100%;
   box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4); }
 
-.button.button-positive.button-small {
-  margin: auto 10px;
-  background-color: #eb5a47 !important; }
+#find-file {
+  background: url("../../../img/img_spritesheet.png") no-repeat;
+  background-position: -364px -302px;
+  background-color: transparent !important;
+  overflow: hidden;
+  min-width: 35px !important;
+  padding: 10px;
+  min-height: 36px;
+  margin: auto 10px; }
+
+.charge-test-button span {
+  background: url("../../../img/img_spritesheet.png") no-repeat;
+  background-position: -112px -235px !important; }
 
 /**
  * Header Styles
@@ -9737,7 +9765,7 @@ div #personal-information {
   .principal-header .logo-container {
     align-items: center; }
     .principal-header .logo-container div:first-child {
-      background: url("../../../img/logo_header_girl.gif") no-repeat center/contain; }
+      background: url("../../../img/logo_header_student.png") no-repeat center/contain; }
     .principal-header .logo-container div:nth-child(2) {
       background: url("../../../img/logo_header_owl.gif") no-repeat center/contain;
       margin: 0 10px 0 15px; }
@@ -9982,6 +10010,8 @@ ion-content {
     ion-content .button:hover {
       color: white;
       background-color: #e63119; }
+  ion-content .student-logo {
+    background: url("../../../img/logo_header_student.png") no-repeat center/contain; }
   ion-content .input-text-styles, ion-content .item-select select, ion-content .item-input input {
     font-weight: 600;
     text-transform: uppercase;
@@ -10029,5 +10059,12 @@ ion-content {
 
 .create-test-content .button {
   background-position: -25px -100px; }
+
+.feedback-buttons {
+  padding: 0 6%; }
+
+@media (min-width: 768px) {
+  .upload-buttons {
+    padding: 0 6%; } }
 
 /*# sourceMappingURL=ionic.css.map */

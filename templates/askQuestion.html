@@ -74,12 +74,18 @@
         <div id="page-button-bar9" class="button-bar">
             <div class="row responsive-md">
                 <div class="col-33">
-                    <a id="page-button11" class="button button-assertive  button-block" ng-click="saveAndReturn()" ng-if="current_question!=0">Atrás</a>
+                    <a id="page-button11" class="button button-positive  button-block back-button" ng-click="saveAndReturn()" ng-if="current_question!=0">
+                      <span></span>
+                      Atrás
+                    </a>
                 </div>
                 <div class="col-33">
                 </div>
                 <div class="col-33">
-                    <a id="page-button11" class="button button-positive  button-block" ng-click="saveAndContinue()">{{option}}</a>
+                    <a id="page-button11" class="{{option == 'Terminar Prueba' ? 'button button-positive button-block finish-button' : 'button button-positive button-block continue-button'}}" ng-click="saveAndContinue()">
+                      <span></span>
+                      {{option}}
+                    </a>
                 </div>
             </div>
         </div>

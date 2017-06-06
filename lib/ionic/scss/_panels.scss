@@ -24,6 +24,11 @@ ion-content.scroll-content.ionic-scroll{
 .start-image{
   display: inline-block;
   padding: 0px 5%;
+  text-align: center;
+
+  img {
+    max-width: 250px;
+  }
 }
 
 .card{
@@ -168,6 +173,9 @@ div #personal-information{
         & {
           width: 100%;
           margin: 0px;
+        }
+        &:nth-child(2) {
+          margin-top: 20px;
         }
       }
     }

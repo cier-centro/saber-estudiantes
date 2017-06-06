@@ -31,7 +31,9 @@ ion-content {
     }
   }
 
-
+  .student-logo {
+    background: url('../../../img/logo_header_student.png') no-repeat center/contain;
+  }
 
   .input-text-styles {
     font-weight: 600;
@@ -124,5 +126,15 @@ ion-content {
 .create-test-content {
   .button {
     background-position: -25px -100px;
+  }
+}
+
+.feedback-buttons {
+  padding: 0 6%;
+}
+
+@media (min-width: 768px) {
+  .upload-buttons {
+    padding: 0 6%;
   }
 }
