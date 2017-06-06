@@ -9639,13 +9639,27 @@ div #personal-information {
   text-align: center; }
   .start-buttons a {
     width: 90%;
-    vertical-align: middle;
-    margin-top: 15%; }
+    vertical-align: middle; }
+    .start-buttons a:first-child span {
+      background-position: -273px -234px; }
+    .start-buttons a:last-child {
+      margin-top: 50px; }
+      .start-buttons a:last-child span {
+        background-position: -112px -235px; }
+  @media (min-width: 768px) {
+    .start-buttons {
+      padding-right: 8%; } }
 
 .button.button-positive {
   border-bottom: 2px solid white;
   background-color: #eb5a47;
   color: #fff; }
+  .button.button-positive span {
+    background: url("../../../img/img_spritesheet.png") no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    left: 0; }
 
 .button.button-calm {
   border-bottom: 2px solid white;
@@ -9773,13 +9787,6 @@ div #personal-information {
     .principal-header .header-logos {
       max-width: 350px;
       margin: auto; } }
-
-form .item-select {
-  height: 47px; }
-  form .item-select select {
-    width: 100%;
-    max-width: 100%;
-    direction: ltr; }
 
 .student-name {
   margin: 0 auto;
@@ -9962,7 +9969,7 @@ ion-content {
     font-size: 18px;
     line-height: 120%; }
   ion-content .button {
-    background: rgba(255, 255, 255, 0.3) url("../../../img/img_spritesheet.png") no-repeat;
+    background: rgba(255, 255, 255, 0.3);
     border-bottom: 2px solid white;
     text-transform: uppercase;
     color: white;
