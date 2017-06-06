@@ -159,6 +159,7 @@ cont_angular.controller('feedbackTestCtrl', ['$scope', '$stateParams', '$ionicPo
 
 
         $scope.Print = function () {
+			$ionicScrollDelegate.scrollTop()
     			const electron= nodeRequire('electron').remote;
     			const fs = nodeRequire('fs');
           const dialog = electron.dialog;
