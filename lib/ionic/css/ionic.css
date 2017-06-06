@@ -9668,6 +9668,10 @@ div #personal-information {
     background-position: -23px -294px; }
   .button.button-positive.save-button span {
     background-position: -190px -235px; }
+  .button.button-positive.back-button span {
+    background-position: -431px -65px; }
+  .button.button-positive.continue-button span {
+    background-position: -431px -19px; }
 
 .button.button-calm {
   border-bottom: 2px solid white;
@@ -10050,5 +10054,8 @@ ion-content {
 
 .create-test-content .button {
   background-position: -25px -100px; }
+
+.feedback-buttons {
+  padding: 0 6%; }
 
 /*# sourceMappingURL=ionic.css.map */
