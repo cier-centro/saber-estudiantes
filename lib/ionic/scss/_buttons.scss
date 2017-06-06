@@ -36,6 +36,16 @@
       width: 50px;
       left: 0;
     }
+    &.cancel-button {
+      span {
+        background-position: -270px -22px;
+      }
+    }
+    &.random-button {
+      span {
+        background-position: -188px -24px;
+      }
+    }
 }
 
 .button.button-calm{
