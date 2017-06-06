@@ -13,15 +13,13 @@
                     <div class="item item-input">
                       <i class="icon ion-search placeholder-icon"></i>
                       <input type="text" id="filepathInput" ng-model="data.path" placeholder="Seleccionar Archivo" ng-click="findfile()">
-                      <a class="button button-positive button-small" ng-click="findfile()">
-                        Buscar Archivo
-                      </a>
+                      <a class="button" id="find-file" ng-click="findfile()"></a>
                     </div>
                   </div>
               </div>
             </div>
             <div class="button-bar responsive-md">
-              <a class="button icon-left ion-close-circled button-positive" ng-click="cancel()" >Cancelar</a>
+              <a class="button button-positive" id="cancel-button" ng-click="cancel()" >Cancelar</a>
               <a class="button icon-left ion-upload button-positive" ng-click="loadFile()">Cargar Prueba</a>
             </div>
             </div>

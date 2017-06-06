@@ -9693,9 +9693,18 @@ div #personal-information {
   width: 100%;
   box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4); }
 
-.button.button-positive.button-small {
-  margin: auto 10px;
-  background-color: #eb5a47 !important; }
+#find-file {
+  background: url("../../../img/spritesheet.png") no-repeat;
+  background-position: -366px -295;
+  background-color: transparent !important;
+  overflow: hidden;
+  min-width: 35px !important;
+  padding: 10px;
+  min-height: 36px;
+  margin: auto 10px; }
+
+#cancel-button {
+  background: url("../../../img/spritesheet.png") no-repeat; }
 
 /**
  * Header Styles
@@ -9773,13 +9782,6 @@ div #personal-information {
     .principal-header .header-logos {
       max-width: 350px;
       margin: auto; } }
-
-form .item-select {
-  height: 47px; }
-  form .item-select select {
-    width: 100%;
-    max-width: 100%;
-    direction: ltr; }
 
 .student-name {
   margin: 0 auto;

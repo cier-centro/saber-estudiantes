@@ -87,7 +87,17 @@
   box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
 }
 
-.button.button-positive.button-small{
+#find-file{
+  background: url('../../../img/spritesheet.png') no-repeat;
+  background-position: -366px -295;
+  background-color: transparent !important;
+  overflow: hidden;
+  min-width: 35px !important;
+  padding: 10px;
+  min-height: 36px;
   margin: auto 10px;
-  background-color: $items-hightlighted-red !important;
+}
+
+#cancel-button{
+  background: url('../../../img/spritesheet.png') no-repeat;
 }
