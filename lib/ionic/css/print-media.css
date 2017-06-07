@@ -1,0 +1,68 @@
+@media print {
+  .bar-light {
+    border: none;
+    box-shadow: 0px 0px 0px !important; }
+
+  #test-data {
+    margin-top: 100px;
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: -6px;
+    padding: 0px;
+    width: 100%;
+    box-shadow: 0px 0px 0px !important; }
+    #test-data #fixed-data {
+      box-shadow: 0px 0px 0px !important;
+      width: 100%;
+      margin-left: -20px; }
+      #test-data #fixed-data .col-20, #test-data #fixed-data .col-40 {
+        margin: 20px; }
+        #test-data #fixed-data .col-20 h2, #test-data #fixed-data .col-40 h2 {
+          font-weight: 600 !important; }
+        #test-data #fixed-data .col-20 p, #test-data #fixed-data .col-40 p {
+          padding: 5px; } }
+      @media print and (max-width: 767px) {
+        #test-data #fixed-data .col-20, #test-data #fixed-data .col-40 {
+          margin: 5px !important; } }
+@media print {
+        #test-data #fixed-data .col-20 #course, #test-data #fixed-data .col-40 #course {
+          width: 70%; } }
+        @media print and (max-width: 767px) {
+          #test-data #fixed-data .col-20 #course, #test-data #fixed-data .col-40 #course {
+            width: 100%; } }
+  @media print and (max-width: 767px) {
+    #test-data {
+      margin-top: 0 !important; } }
+@media print {
+    #test-data .item.item-text-wrap {
+      box-shadow: 0px 0px 0px !important; } }
+    @media print and (max-width: 767px) {
+      #test-data .item.item-text-wrap {
+        height: 300px !important;
+        margin: 0 !important; } }
+  @media print and (max-width: 767px) {
+    #test-data #name-label {
+      display: none !important; } }
+
+@media print {
+  .answers .card {
+    page-break-before: always;
+    margin-top: 10px;
+    box-shadow: 0px 0px 0px !important; }
+    .answers .card .item.item-divider {
+      border-top: 2px solid rgba(0, 0, 0, 0.6); }
+      .answers .card .item.item-divider p {
+        color: black; }
+    .answers .card img {
+      box-shadow: 0px 0px 0px !important; }
+
+  .button {
+    display: none; }
+
+  .scroll-content {
+    position: relative; }
+
+  .pane {
+    position: initial; } }
+
+/*# sourceMappingURL=print-media.css.map */

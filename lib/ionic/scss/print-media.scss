@@ -1,0 +1,97 @@
+
+@media print {
+
+.bar-light{
+  border: none;
+  box-shadow: 0px 0px 0px !important;
+
+}
+  #test-data{
+    margin-top: 100px;
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: -6px;
+    padding: 0px;
+    width: 100%;
+    box-shadow: 0px 0px 0px !important;
+    #fixed-data{
+      box-shadow: 0px 0px 0px !important;
+      width: 100%;
+      margin-left: -20px;
+      .col-20, .col-40{
+        margin: 20px;
+        h2{
+          font-weight: 600 !important;
+        }
+        p{
+          padding: 5px;
+        }
+        @media (max-width: 767px) {
+          & {
+            margin:5px !important;
+          }
+        }
+        //course label in the second header
+        #course{
+          width: 70%;
+          @media(max-width: 767px){
+            &{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      & {
+        margin-top: 0 !important;
+      }
+    }
+    .item.item-text-wrap{
+      box-shadow: 0px 0px 0px !important;
+      @media (max-width: 767px) {
+        & {
+          height: 300px !important;
+          margin: 0 !important;
+        }
+      }
+    }
+    #name-label{
+      @media (max-width: 767px) {
+        & {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  .answers{
+    .card{
+      page-break-before: always;
+      margin-top: 10px;
+      box-shadow: 0px 0px 0px !important;
+      .item.item-divider{
+        border-top: 2px solid rgba(0,0,0,.6);
+        p{
+          color: black;
+        }
+      }
+
+      img{
+        box-shadow: 0px 0px 0px !important;
+      }
+    }
+  }
+  .button{
+    display: none;
+  }
+
+  .scroll-content {
+    position: relative;
+  }
+
+  .pane {
+    position: initial;
+  }
+}
