@@ -9553,17 +9553,25 @@ ion-content.scroll-content.ionic-scroll {
   .start-page-card .item-text-wrap {
     box-shadow: 0 0px 0px !important; }
 
+.item.item-select select {
+  padding-left: 0px;
+  direction: ltr !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  position: relative !important; }
+
 div#page-markdown1 {
   background-color: white;
   padding: 10;
   box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4); }
   div#page-markdown1 h4 {
-    color: black;
-    font-weight: 600; }
+    color: black; }
 
 .answers {
   width: 90%;
   margin: 2% auto; }
+  .answers .MathJax_SVG_Display {
+    margin: 0px !important; }
   .answers .item-divider {
     background-color: #50bbb5; }
     .answers .item-divider p {
@@ -9572,9 +9580,12 @@ div#page-markdown1 {
     .answers .item-divider .question-numb {
       font-weight: bold; }
   .answers .card, .answers .item-text-wrap {
+    page-break-after: always;
     width: 100%;
     background-color: white !important;
-    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3) !important; }
+    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3) !important;
+    margin-top: 0px;
+    margin-bottom: 0px; }
     .answers .card .item.item-text-wrap, .answers .item-text-wrap .item.item-text-wrap {
       padding: 10px;
       border: none; }
@@ -9743,6 +9754,9 @@ div #personal-information {
   background: url("../../../img/img_spritesheet.png") no-repeat;
   background-position: -112px -235px !important; }
 
+#start-button a {
+  width: 80%; }
+
 /**
  * Header Styles
  * --------------------------------------------------
@@ -9868,22 +9882,22 @@ div #start-button {
     background-color: #bee1e3;
     margin-left: -20px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.4); }
-    #test-data #fixed-data .col-20 {
+    #test-data #fixed-data .col-20, #test-data #fixed-data .col-40 {
       margin: 20px; }
-      #test-data #fixed-data .col-20 h2 {
+      #test-data #fixed-data .col-20 h2, #test-data #fixed-data .col-40 h2 {
         color: #1f3542 !important;
         font-weight: 600 !important; }
-      #test-data #fixed-data .col-20 p {
+      #test-data #fixed-data .col-20 p, #test-data #fixed-data .col-40 p {
         padding: 5px;
         background-color: #50bbb5;
         color: white; }
       @media (max-width: 767px) {
-        #test-data #fixed-data .col-20 {
+        #test-data #fixed-data .col-20, #test-data #fixed-data .col-40 {
           margin: 5px !important; } }
-      #test-data #fixed-data .col-20 #course {
+      #test-data #fixed-data .col-20 #course, #test-data #fixed-data .col-40 #course {
         width: 70%; }
         @media (max-width: 767px) {
-          #test-data #fixed-data .col-20 #course {
+          #test-data #fixed-data .col-20 #course, #test-data #fixed-data .col-40 #course {
             width: 100%; } }
   @media (max-width: 767px) {
     #test-data {
@@ -9911,10 +9925,11 @@ div #start-button {
 #time-count {
   background: url("../../../img/bg-timer.png") no-repeat;
   overflow: hidden;
-  padding: 10px;
-  min-height: 40px; }
+  padding: 10px 5px 10px 0px;
+  min-height: 40px;
+  white-space: nowrap; }
   #time-count #time_counter {
-    margin-left: 35px;
+    margin-left: 40px;
     font-weight: 600;
     color: #1f3542; }
 
@@ -9932,6 +9947,14 @@ div #start-button {
   box-shadow: 0 0px 0px !important; }
   .card .item.item-text-wrap, .item-text-wrap .item.item-text-wrap {
     box-shadow: 0 0px 0px !important; }
+
+@media (max-width: 767px) {
+  .small-label {
+    width: 45% !important; } }
+
+@media (max-width: 767px) {
+  .big-label {
+    width: 100% !important; } }
 
 #empty-space {
   box-shadow: 0 0px 0px !important; }
@@ -9966,10 +9989,12 @@ div #start-button {
 
 #mathContainer {
   overflow: normal !important; }
-  #mathContainer .MathJax_SVG_Display span {
-    background: white;
-    padding: 30px;
-    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4); }
+  #mathContainer .MathJax_SVG_Display {
+    background-color: white;
+    margin-top: 0px; }
+    #mathContainer .MathJax_SVG_Display span {
+      background: white;
+      padding: 30px; }
   #mathContainer .question-with-image {
     box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4) !important; }
   #mathContainer .generic-text-image {
@@ -9984,6 +10009,9 @@ div #start-button {
     padding-top: 10px;
     background-color: white;
     box-shadow: 0px 70px 15px -70px rgba(0, 0, 0, 0.4); }
+
+#prev, #next, #detail {
+  display: none !important; }
 
 body * {
   font-family: 'arial'; }

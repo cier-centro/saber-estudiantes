@@ -56,6 +56,16 @@ ion-content.scroll-content.ionic-scroll{
     box-shadow: 0 0px 0px !important;
   }
 }
+
+.item.item-select{
+  select{
+    padding-left: 0px;
+  direction: ltr !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  position: relative !important;
+}
+}
 //specific for askQuestions
 
 div#page-markdown1 {
@@ -64,13 +74,17 @@ div#page-markdown1 {
     box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
     h4{
       color: black;
-      font-weight: 600;
     }
 }
 
 // answersFeedback
 
 .answers{
+
+  .MathJax_SVG_Display{
+    margin: 0px !important;
+  }
+
   width: 90%;
 
   margin: 2% auto;
@@ -87,10 +101,12 @@ div#page-markdown1 {
 
 
   .card{
+    page-break-after: always;
     width: 100%;
     background-color: white !important;
     box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3) !important;
-
+    margin-top: 0px;
+    margin-bottom: 0px;
     .item.item-text-wrap{
       padding: 10px;
       border: none;
@@ -131,6 +147,7 @@ div #personal-information{
 #detail{
   display: none;
 }
+
 
 //uploadQuestionary
 

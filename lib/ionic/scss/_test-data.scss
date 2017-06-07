@@ -18,7 +18,7 @@
     background-color: $background-test-data;
     margin-left: -20px;
     box-shadow: 10px 10px 5px rgba(0,0,0,.4);
-    .col-20{
+    .col-20, .col-40{
       margin: 20px;
       h2{
         color: $text-dark-blue !important;
@@ -88,10 +88,11 @@
 #time-count{
   background: url('../../../img/bg-timer.png') no-repeat;
   overflow: hidden;
-  padding: 10px;
+  padding: 10px 5px 10px 0px;
   min-height: 40px;
+  white-space: nowrap;
   #time_counter{
-    margin-left: 35px;
+    margin-left: 40px;
     font-weight: 600;
     color: $text-dark-blue;
   }
@@ -116,7 +117,23 @@
     }
   }
 
+//sm=480
 
+.small-label{
+  @media (max-width: 767px) {
+    & {
+      width: 45% !important;
+    }
+  }
+}
+
+.big-label{
+  @media (max-width: 767px) {
+    & {
+      width: 100% !important;
+    }
+  }
+}
 ///this is a empty space needed to set the questions in a right possition
 //that is not properly part of the header test-data, but is an element created because of it
 #empty-space{

@@ -6,14 +6,16 @@
       <div class="row  responsive-md" id="fixed-data">
         <div class="col-20"><h2>Nombre de la Prueba: </h2><p>{{header_data.test}}</p></div>
         <div class="col-20" id="name-label"><h2>Nombre del estudiante:</h2> <p>{{header_data.student}}</p></div>
-        <div class="col-20"><h2>Asignatura:</h2><p> {{header_data.asignature}}</p></div>
-        <div class="col-20" ><h2>Curso:</h2> <p id="course">{{header_data.level}}</p></div>
+        <div class="row">
+          <div class="col-40 small-label"><h2>Asignatura:</h2><p> {{header_data.asignature}}</p></div>
+          <div class="col-40 small-label" ><h2>Curso:</h2> <p id="course">{{header_data.level}}</p></div>
+        </div>
       </div>
-      <div class="row time-header responsive-md">
+      <div class="row time-header responsive-sm">
         <div class="col-33 time-lab"><h2> </h2></div>
         <div class="col-10 time-lab"><h2> </h2></div>
-        <div class="col-25" id="question_counter"><h2>Pregunta: {{current_question+1}}/{{max_questions}}</h2></div>
-        <div class="col-25" id="time-count"><div class="time-tex-div" id ="time_counter"> {{globals.total_time}} </div></h2></div>
+        <div class="col-33" id="question_counter"><h2>Pregunta: {{current_question+1}}/{{max_questions}}</h2></div>
+        <div class="col-33" id="time-count"><div class="time-tex-div" id ="time_counter"> {{globals.total_time}} </div></h2></div>
       </div>
     </div>
   </div>
@@ -45,7 +47,8 @@
             </h4>
         </div>
 
-        <div class="card" id="mathContainer" ng-if="question.type=='2'">
+        <div class="card question-with-image" id="mathContainer" ng-if="question.type=='2'">
+            <h4 class="generic-text-image">Formula relacionada</h4>
             {{question.file}}
         </div>
         <div class="card" id="mathContainer" ng-if="question.type=='1'">
