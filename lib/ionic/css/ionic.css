@@ -9580,7 +9580,6 @@ div#page-markdown1 {
     .answers .item-divider .question-numb {
       font-weight: bold; }
   .answers .card, .answers .item-text-wrap {
-    page-break-after: always;
     width: 100%;
     background-color: white !important;
     box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3) !important;
