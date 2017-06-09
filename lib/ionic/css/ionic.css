@@ -9649,6 +9649,20 @@ div #personal-information {
       .principal-header.upload-questionary .button-bar a:nth-child(2) {
         margin-top: 20px; } }
 
+/*
+.page-break{
+  page-break-after: always;
+}*/
+h1, h2, h3, h4, h5, p {
+  page-break-inside: avoid !important;
+  break-inside: avoid !important; }
+
+#card-block {
+  display: block;
+  page-break-inside: avoid !important;
+  page-break-after: always !important;
+  break-after: always !important; }
+
 .start-buttons {
   vertical-align: middle;
   text-align: center; }
