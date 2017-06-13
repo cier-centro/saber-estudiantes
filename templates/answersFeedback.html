@@ -32,7 +32,7 @@
 
 
     <div class="row answers" ng-repeat="question in questions track by $index">
-      <div class="card">
+      <div class="card" id="card-block">
         <div class="item item-divider">
           <p class="question-numb">Pregunta número {{$index+1}}</p> <p>({{question.question.cod_question}})</p>
         </div>
@@ -48,7 +48,7 @@
           <div id="mathContainer" ng-if="question.question.type=='3'" >
             <img src="contents/{{question.question.file}}" class="row" >
           </div>
-          <div ng-repeat="option in question.question.answers track by $index">
+          <div ng-repeat="option in question.question.answers track by $index" style="page-break-after:always;">
             <div class="answers-checked" ng-if="$index == question.selected_index || option.is_correct">
               <i class="icon ion-checkmark" ng-if="option.is_correct"></i>
               <i class="icon ion-close-circled" ng-if="!option.is_correct"></i>

@@ -18,7 +18,33 @@ cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$ht
         $scope.returnToMain = function(){
           $state.go("start")
         }
+
+        $scope.verifyData=function(){
+          var valid=0;
+          if(typeof $scope.data.name=="undefined"){
+            valid++;
+          }
+          if(typeof $scope.data.test_name=="undefined"){
+            valid++;
+          }
+          if($scope.data.grade==0){
+            valid++;
+          }
+          if($scope.data.id_asignature=="NA"){
+            valid++;
+          }
+          if(valid>0){
+            var alertPopup = $ionicPopup.alert({
+                title: 'Datos faltantes',
+                template: 'Debe agregar todos sus datos para continuar'
+            });
+            return false;
+          }
+          return true;
+        }
+
         $scope.randomTest = function () {
+          if($scope.verifyData()){
           var url = "data/dbas/"+$scope.data.grade+$scope.data.id_asignature+".json";
 					if(ionic.Platform.isAndroid()){
 						url = "/android_asset/www/data/dbas/"+$scope.data.grade+$scope.data.id_asignature+".json";
@@ -63,4 +89,7 @@ cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$ht
             })
           })
         }
+        }
+
+
     }]);
