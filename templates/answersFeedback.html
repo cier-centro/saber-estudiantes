@@ -38,21 +38,26 @@
         </div>
         <p class="question">{{question.question.header_question}}</p>
         <div class="item item-text-wrap">
-          <div id="mathContainer" ng-if="question.question.type=='2'">
+          <div id="mathContainer" ng-if="!question.question.file.endsWith('.pdf') && !(question.question.file.endsWith('.jpg') || question.question.file.endsWith('.png')) && question.question.file!=''">
             {{question.question.file}}
           </div>
-          <div id="mathContainer" ng-if="question.question.type=='1'">
+          <div id="mathContainer" ng-if="question.question.file.endsWith('.pdf')">
             <canvas id="pdf_viewer_{{$index}}" style="width:100%;display:none" ></canvas>
             <button class="button button-balanced" id="btn_canvas_{{$index}}" ng-click="loadPDFAng(question.question.file,'{{$index}}')">Cargar lectura</button>
           </div>
-          <div id="mathContainer" ng-if="question.question.type=='3'" >
+          <div id="mathContainer" ng-if="question.question.file.endsWith('.jpg') || question.question.file.endsWith('.png')" >
             <img src="contents/{{question.question.file}}" class="row" >
           </div>
           <div ng-repeat="option in question.question.answers track by $index" style="page-break-after:always;">
             <div class="answers-checked" ng-if="$index == question.selected_index || option.is_correct">
               <i class="icon ion-checkmark" ng-if="option.is_correct"></i>
               <i class="icon ion-close-circled" ng-if="!option.is_correct"></i>
-              {{option.header_answer}}
+              <div id="mathContainer" ng-if="option.header_answer.endsWith('.jpg') || option.header_answer.endsWith('.png')" >
+              <img src="contents/{{option.header_answer}}" style="width:100%">
+              </div>
+              <div id="mathContainer" ng-if="!option.header_answer.endsWith('.jpg') && !option.header_answer.endsWith('.png')" >
+                {{option.header_answer}}
+              </div>
             </div>
           </div>
         </div>
