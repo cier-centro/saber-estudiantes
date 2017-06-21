@@ -87,7 +87,8 @@ cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$ht
 							}
               console.log($scope.dbas)
               var qset=[];
-              for(var i=0;i<max_questions;i++){
+              var added_q = 0;
+              while(added_q<max_questions){
                 var n_q= $scope.randomQuestion($scope.dbas)
                 var add= true
                 for(var e in qset){
@@ -98,6 +99,7 @@ cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$ht
                 if(add){
                   selected_questions.push($scope.dbas[n_q[0]]["questions"][n_q[1]].id);
                   qset.push(n_q)
+                  added_q++;
                 }
               }
 							shuffle(selected_questions);
