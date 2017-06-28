@@ -15,7 +15,68 @@ cont_angular.controller('uploadQuestionaryCtrl', ['$scope', '$stateParams', '$io
         };
         $scope.preguntasArchivo = []
         $scope.loadFile=function(){
-          var fs = nodeRequire('fs');
+
+        }
+
+        $scope.loadFile=function(){
+
+          $scope.name_popup = $ionicPopup.show({
+              template: '<p>Por favor, antes de iniciar la prueba ingresa tu nombre</p><input type="text" ng-model="data.name">',
+              title: 'Ingresa tu nombre',
+              subTitle: '',
+              scope: $scope,
+              buttons: [
+                  {
+                      text: 'Cancelar',
+                      onTap: function (e) {
+                          $scope.name_popup.close();
+                          return null;
+                      }
+                  },
+                  {
+                      text: '<b>Continuar</b>',
+                      type: 'button-positive',
+                      onTap: function (e) {
+                          if (!$scope.data.name) {
+                              //don't allow the user to close unless he enters wifi password
+                              e.preventDefault();
+                          } else {
+                              return $scope.data.name;
+                          }
+                      }
+                  }
+              ]
+          });
+
+          $scope.name_popup.then(function (res) {
+              if (res != null) {
+                  user_name = res;
+                  var fs = nodeRequire('fs');
+                  fs.readFile($scope.data.path, 'utf8', function (err, data) {
+                    if (err) return console.log(err);
+                    lines = data.split('\n');
+                    var nombreprueba = lines[0];
+                    selected_questions = lines[1].split(',')
+                    max_questions = selected_questions.length;
+                    var sample = selected_questions[0].split('#')[0];
+                    selected_level = parseInt(sample)
+                    selected_asignare = sample.replace(""+selected_level,"")[0]
+                    $scope.getQuesitonsData()
+                    timer = setInterval(function(){
+                        globals.total_time++;
+                        document.getElementById("time_counter").innerHTML = "Tiempo Total: " + Math.floor(globals.total_time/60)+":"+(globals.total_time%60);
+                        console.log(globals.total_time);
+                    }, 1000);
+                    $state.go("askaquestion")
+                    // data is the contents of the text file we just read
+                  });
+              }
+          });
+
+          /*fileChooser.open(function(uri){
+            console.log(uri)
+          });*/
+          /*var fs = nodeRequire('fs');
           fs.readFile($scope.data.path, 'utf8', function (err, data) {
             if (err) return console.log(err);
             lines = data.split('\n');
@@ -33,7 +94,7 @@ cont_angular.controller('uploadQuestionaryCtrl', ['$scope', '$stateParams', '$io
             }, 1000);
             $state.go("askaquestion")
             // data is the contents of the text file we just read
-          });
+          });*/
         }
 
         $scope.getQuesitonsData = function () {
