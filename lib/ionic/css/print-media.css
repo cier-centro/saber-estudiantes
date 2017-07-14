@@ -45,15 +45,17 @@
       display: none !important; } }
 
 @media print {
-  .answers .card {
-    margin-top: 10px;
-    box-shadow: 0px 0px 0px !important; }
-    .answers .card .item.item-divider {
-      border-top: 2px solid rgba(0, 0, 0, 0.6); }
-      .answers .card .item.item-divider p {
-        color: black; }
-    .answers .card img {
+  .answers {
+    page-break-before: always; }
+    .answers .card {
+      margin-top: 10px;
       box-shadow: 0px 0px 0px !important; }
+      .answers .card .item.item-divider {
+        border-top: 2px solid rgba(0, 0, 0, 0.6); }
+        .answers .card .item.item-divider p {
+          color: black; }
+      .answers .card img {
+        box-shadow: 0px 0px 0px !important; }
 
   .button {
     display: none; }

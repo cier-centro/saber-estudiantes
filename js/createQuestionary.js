@@ -18,6 +18,11 @@ cont_angular.controller('createQuestionaryCtrl', ['$scope', '$stateParams', '$ht
         $scope.returnToMain = function(){
           $state.go("start")
         }
+        
+        // boton cerrar
+        $scope.hide=function(a){
+          document.getElementById(a).style.display="none";
+        }
 
         $scope.verifyData=function(){
           var valid=0;

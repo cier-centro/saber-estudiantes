@@ -67,7 +67,9 @@
   }
 
   .answers{
+    page-break-before: always;
     .card{
+
       margin-top: 10px;
       box-shadow: 0px 0px 0px !important;
       .item.item-divider{
